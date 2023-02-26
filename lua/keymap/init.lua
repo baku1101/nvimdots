@@ -5,6 +5,13 @@ local map_cr = bind.map_cr
 -- local map_cmd = bind.map_cmd
 -- local map_callback = bind.map_callback
 
+vim.api.nvim_set_keymap('n','m','%',{noremap = true})
+vim.api.nvim_set_keymap('v','m','%',{noremap = true})
+vim.api.nvim_set_keymap('n','H','^',{noremap = true})
+vim.api.nvim_set_keymap('v','H','^',{noremap = true})
+vim.api.nvim_set_keymap('n','L','$',{noremap = true})
+vim.api.nvim_set_keymap('v','L','$',{noremap = true})
+
 local plug_map = {
 	-- Package manager: lazy.nvim
 	["n|<leader>ph"] = map_cr("Lazy"):with_silent():with_noremap():with_nowait():with_desc("package: Show"),
@@ -18,6 +25,7 @@ local plug_map = {
 	["n|<leader>pr"] = map_cr("Lazy restore"):with_silent():with_noremap():with_nowait():with_desc("package: Restore"),
 	["n|<leader>px"] = map_cr("Lazy clean"):with_silent():with_noremap():with_nowait():with_desc("package: Clean"),
 }
+
 
 bind.nvim_load_mapping(plug_map)
 
